@@ -1,4 +1,4 @@
-# Data Mining Mile Stone Project - Air Qaulity Index
+# Data Mining Milestone Project - Air Qaulity Index
 
 The objectives of this project is to determine the impact of Haze on Malaysians' Tourism and Retail industries and to observe how Malaysians react to this phenomena and public awareness. 
 
