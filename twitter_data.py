@@ -1,10 +1,4 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# # Tweet Scraping 
-
-# In[1]:
-
+## Tweet Scraping 
 
 #Import the necessary packages
 import tweepy
@@ -15,6 +9,7 @@ from urllib.request import urlopen
 from bs4 import BeautifulSoup
 import re
 
+#adjust the output display screen size
 pd.set_option('display.max_columns', 100)
 pd.set_option('display.width', 1000)
 
@@ -28,7 +23,7 @@ auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, access_token_secret)
 api = tweepy.API(auth,wait_on_rate_limit=True)
 
-#Extract the data required
+#Extract the data required and put them into list
 message,user_name,created_at,location,retweet_count=[],[],[],[],[]
 
 #input the words would like to find in the query search 'q={}'
@@ -47,7 +42,4 @@ for tweet in tweepy.Cursor(api.search,q={"haze,jerebu"},count=500, lang="en").it
     
     #convert the data to csv output
     df.to_csv("Twitter Data.csv")
-
-  
-                     
 
