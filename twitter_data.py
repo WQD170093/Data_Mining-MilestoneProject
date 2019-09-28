@@ -31,7 +31,9 @@ api = tweepy.API(auth,wait_on_rate_limit=True)
 #Extract the data required
 message,user_name,created_at,location,retweet_count=[],[],[],[],[]
 
-for tweet in tweepy.Cursor(api.search,q={"haze,jerebu"},count=500, lang="en", since="2018-01-01").items():
+#input the words would like to find in the query search 'q={}'
+#input number of tweets in 'items()' would like to run
+for tweet in tweepy.Cursor(api.search,q={"haze,jerebu"},count=500, lang="en").items(10000):
     
     message.append(tweet.text)
     user_name.append(tweet.user.name)
