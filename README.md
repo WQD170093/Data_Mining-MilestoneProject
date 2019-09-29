@@ -12,7 +12,7 @@ There are 4 type of data files:
 1. Air Quality Index
 Air Quality Index was crawled from website (http://aqicn.org/map/world/) to obtain the up to date real time data. The website consists of world Air Quality Index by country by city. Malaysians' air quality index was crawled and collected on daily basis.
 
-2. Tourism data (Secondary data)
+2. Tourism data
 
 3. Tweets
 All the recent tweets about haze were extracted for the purpose of sentiment analysis in order to check the public awareness and response of Malaysians on haze.
