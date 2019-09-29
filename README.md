@@ -16,3 +16,6 @@ The history of tourism data was extracted from Malaysia Tourism website (http://
 
 3. Tweets:
 All the recent tweets about haze were extracted for the purpose of sentiment analysis in order to check the public awareness and response of Malaysians on haze.
+
+# Youtube Link
+https://youtu.be/QjqeCgVSEDs
