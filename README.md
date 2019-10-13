@@ -19,4 +19,5 @@ All the recent tweets about haze were extracted for the purpose of sentiment ana
 
 # Youtube Link
 1. Web Crawling - https://youtu.be/QjqeCgVSEDs
-2. Hadoop and Hive Installation + Data Storage in Hive Database - 
+2. Hadoop and Hive Installation + Data Storage in Hive Database - https://youtu.be/5okk86vV4fs
+
