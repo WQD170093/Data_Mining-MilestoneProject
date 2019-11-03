@@ -1,23 +1,37 @@
-# Data Mining Milestone Project - Air Qaulity Index
+# Data Mining Milestone Project - Pollutant Standard Index and Tourism Industry
 
-The objectives of this project is to determine the impact of Haze on Malaysians' Tourism industry and to observe how Malaysians react to this phenomena and public awareness. 
+The objectives of this analysis are:
+1. To determine the relationship between Pollutant Standard Index (PSI) reading and the tourism stock market prices
+2. To identify the effect of haze on the number of tourist arrival
+3. To understand the public sentiment to haze through Twitter
 
 There are 4 type of data files:
-1. Air Quality Index (Real Time data)
-2. Tourism data (Secondary data)
-3. Tweets (Real Time data)
+1. Pollutant Standard Index (PSI) (Real Time and historical data)
+2. Stock Market Price (Secondary data)
+3. Tourist Arrival Data (Secondary data)
+4. Tweets (Real Time data)
+
 
 # Data Extraction
-1. Air Quality Index:
-Air Quality Index was crawled from website (http://aqicn.org/map/world/) to obtain the up to date real time data. The website consists of world Air Quality Index by country by city. Malaysians' air quality index was crawled and collected on daily basis.
+1. PSI Data	
+The PSI data was collected on hourly basis and by major regions in Singapore from year 2009 January to year 2019 October.
+Source - https://data.gov.sg/dataset/psi
 
-2. Tourism data:
-The history of tourism data was extracted from Malaysia Tourism website (http://mytourismdata.tourism.gov.my/?page_id=14#!range=month&from=201801&to=201906) to check on the number of tourist arrival during haze and non-haze period.
+2. Stock Price Data	
+The top 5 tourism stock share in Singapore were identified and their stock prices were collected on daily basis from year 2009 January to year 2019 October.
+Source - https://sg.finance.yahoo.com/
 
-3. Tweets:
-All the recent tweets about haze were extracted for the purpose of sentiment analysis in order to check the public awareness and response of Malaysians on haze.
+3. International Tourist Arrival Data	
+The number of international visitor arrival was recorded from year 1978 January to year 2019 August on monthly basis.
+Source - https://www.tablebuilder.singstat.gov.sg/publicfacing/createDataTable.action?refId=1991
+
+4. Tweets Data	
+Tweets regarding key words like haze and jerebu were collected from 20th September 2019 to 9th October 2019.
+Source - https://twitter.com/
+
 
 # Youtube Link
 1. Web Crawling - https://youtu.be/QjqeCgVSEDs
 2. Hadoop and Hive Installation + Data Storage in Hive Database - https://youtu.be/5okk86vV4fs
+3. Data Processing using SAS Enterprise Miner - https://youtu.be/YAVwkkRMKlQ
 
