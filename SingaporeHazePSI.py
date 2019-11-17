@@ -86,3 +86,25 @@ def test():
 
 main()
 
+###correlation check
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+#Set the limit of display
+pd.set_option('display.max_rows', 500)
+pd.set_option('display.max_columns', 500)
+pd.set_option('display.width', 1000)
+pd.set_option('display.max_colwidth', -1)
+
+PSI4=pd.read_csv(r"C:\Users\User\Desktop\UM\WQD7005\Milestone\psi_data4.csv", header=0,skipinitialspace=True)
+PSI4.columns=['Date','PSI Avg','Weighted Average Stock Price','Visitor Arrivals','YOY GDP Growth Rate','Trend']
+print(PSI4.corr())
+
+#Correlation Matrix
+plt.matshow(PSI4.corr())
+plt.xticks(range(5),['PSI Avg','Weighted Average Stock Price','Visitor Arrivals','YOY GDP Growth Rate','Trend'],rotation=90)
+plt.yticks(range(5),['PSI Avg','Weighted Average Stock Price','Visitor Arrivals','YOY GDP Growth Rate','Trend'])
+plt.colorbar()
+plt.figure(figsize=(10,10))
+plt.show()
