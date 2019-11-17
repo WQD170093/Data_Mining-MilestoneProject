@@ -2,7 +2,7 @@
 
 The objectives of this analysis are:
 1. To determine the relationship between Pollutant Standard Index (PSI) reading and the tourism stock market prices
-2. To identify the effect of haze on the number of tourist arrival
+2. To identify the other factors that affect tourism stock market prices
 3. To understand the public sentiment to haze through Twitter
 
 There are 4 type of data files:
@@ -10,6 +10,7 @@ There are 4 type of data files:
 2. Stock Market Price (Secondary data)
 3. Tourist Arrival Data (Secondary data)
 4. Tweets (Real Time data)
+5. GDP Growth Rate (Secondary data)
 
 
 # Data Extraction
@@ -29,9 +30,14 @@ Source - https://www.tablebuilder.singstat.gov.sg/publicfacing/createDataTable.a
 Tweets regarding key words like haze and jerebu were collected from 20th September 2019 to 9th October 2019.
 Source - https://twitter.com/
 
+5. GDP Growth Rate
+The year on year GDP Growth Rate were collected on quarterly basis from year 2009 until year 2019.
+Source - https://data.gov.sg/dataset/gross-domestic-product-in-chained-2015-dollars-year-on-year-growth-rate-quarterly
+
 
 # Youtube Link
 1. Web Crawling - https://youtu.be/QjqeCgVSEDs
 2. Hadoop and Hive Installation + Data Storage in Hive Database - https://youtu.be/5okk86vV4fs
 3. Data Processing using SAS Enterprise Miner - https://youtu.be/YAVwkkRMKlQ
+4. Decision Tree and Linear Regression Model using SAS Enterprise Miner - https://youtu.be/5BxlmfrkF4k
 
