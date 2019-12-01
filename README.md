@@ -40,4 +40,5 @@ Source - https://data.gov.sg/dataset/gross-domestic-product-in-chained-2015-doll
 2. Hadoop and Hive Installation + Data Storage in Hive Database - https://youtu.be/5okk86vV4fs
 3. Data Processing using SAS Enterprise Miner - https://youtu.be/YAVwkkRMKlQ
 4. Decision Tree and Linear Regression Model using SAS Enterprise Miner - https://youtu.be/5BxlmfrkF4k
+5. Clustering using SAS Enterprise Miner - https://youtu.be/umhR3IiHTE8
 
