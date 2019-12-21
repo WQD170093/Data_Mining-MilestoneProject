@@ -1,3 +1,4 @@
+###PSI data crawling
 import requests
 from datetime import date
 from datetime import datetime
@@ -64,7 +65,7 @@ def main():
     date = datetime.strptime(strDate, '%Y-%m-%d')
     today = datetime.now()
     print("Scrapping data from {} until {}".format(date, today))
-    fileName = "data/SingaporeHazePSI_{}-{}.csv".format(strDate, today.strftime("%Y-%m-%d"))
+    fileName = "SingaporeHazePSI_{}-{}.csv".format(strDate, today.strftime("%Y-%m-%d"))
     f = open(fileName, "a")
     f.write("timestamp, westPsi, eastPsi, centralPsi, southPsi, northPsi, westPM25, eastPM25, centralPM25, southPM25, northPM25\n")
     f.close()
