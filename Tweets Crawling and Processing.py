@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
 #Download all the required packages
 import tweepy
 from urllib.request import urlopen
@@ -28,10 +22,7 @@ pd.set_option('display.width', 1000)
 pd.set_option('display.max_colwidth', -1)
 
 
-# # Crawl Tweets
-
-# In[ ]:
-
+## Crawl Tweets
 
 #input credentials here
 consumer_key = 'JWhVdjJL5A9HBYhFhXji8Gui4'
@@ -63,18 +54,10 @@ for tweet in tweepy.Cursor(api.search,q={"haze"},count=500, lang="en",since='').
     df.to_csv("Twitter Data_test2.csv")
 
 
-# # Tweet Cleaning and Processing
-
-# In[2]:
-
-
+## Tweet Cleaning and Processing
 #Open the compile tweets data
 haze_data=pd.read_csv(r"C:\Users\User\Desktop\UM\WQD7005\Milestone\Raw Twitter Data.csv", header='infer',sep=",")
 #print(haze_data)
-
-
-# In[3]:
-
 
 #Create variable Sentiment Polarity
 def detect_polarity(text):
@@ -82,9 +65,6 @@ def detect_polarity(text):
 
 haze_data['Sentiment Polarity'] = haze_data['Message'].apply(detect_polarity)
 #print(haze_data[1:100])
-
-
-# In[4]:
 
 
 #Create variable Positivity 
@@ -97,9 +77,6 @@ haze_data['Positivity'] = haze_data['Sentiment Polarity'].apply(pos_neg)
 print("Numbre of Positive Comment :",np.count_nonzero(haze_data['Positivity']=='Positive'))
 print("Numbre of Negative Comment :",np.count_nonzero(haze_data['Positivity']=='Negative'))
 print("Numbre of Neutral Comment :",np.count_nonzero(haze_data['Positivity']=='Neutral'))
-
-
-# In[11]:
 
 
 #Data Cleaning on the Tweets messages
@@ -115,21 +92,13 @@ for i in range(len(haze_data)):
     stopwords.update('are','and','for','its','not','mom','bulu_bulu','outsidennmom','jerebunnokay','play','bulu','https','co')
     txt = [x for x in txt.split() if x not in stopwords]
     
-    stemmer = PorterStemmer()
-    txt=[" ".join([stemmer.stem(word) for word in txt])]
-    
-    lemmatizer = WordNetLemmatizer()
-    txt = [" ".join([lemmatizer.lemmatize(word) for word in txt])]
-    
+    txt=[" ".join(str(txt) for word in txt)]
     haze_data.at[i,"New_Message"]=txt
     
 #print(haze_data[1:100])
 
 #Save the data as csv file
 haze_data.to_csv(r"C:\Users\User\Desktop\UM\WQD7005\Milestone\Raw Twitter Data2.csv")
-
-
-# In[12]:
 
 
 #Split the tweets by Positivity
@@ -139,11 +108,7 @@ Neutral_Comment=haze_data['New_Message'][haze_data["Positivity"]=="Neutral"]
 print(Positive_Comment[1:10])
 
 
-# # Word Cloud
-
-# In[13]:
-
-
+## Word Cloud
 #Create Wordcloud for every sentiment category
 wordcloud1 = WordCloud(background_color="black",width = 600, height = 400).generate(str(Positive_Comment))
 plt.figure()
@@ -164,5 +129,17 @@ plt.figure()
 plt.imshow(wordcloud3, interpolation="bilinear")
 plt.axis("off")
 plt.title("Word Cloud for Neutral Comment",fontsize = 20)
+plt.show()
+
+#Create Pie Chart
+haze_data['Positivity'].value_counts().plot(kind='pie', autopct='%1.0f%%',title='Sentiment of Tweets about Haze')
+
+#Create histogram
+plt.hist(haze_data["Sentiment Polarity"])
+plt.title("Sentiment Score of Tweets about Haze")
+plt.xlabel("Sentiment Score")
+plt.ylabel("Number of Tweets")
+plt.xlim([-1, 1])
+plt.xticks(np.arange(-1, 1, 0.10))
 plt.show()
 
